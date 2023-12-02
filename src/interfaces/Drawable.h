@@ -2,8 +2,7 @@
 // Created by signal on 12/2/23.
 //
 
-#ifndef DRAWABLE_H
-#define DRAWABLE_H
+#pragma once
 
 class Drawable {
 public:

@@ -10,5 +10,7 @@ add_executable(virgil src/main.cpp
         src/config/Consts.h
         src/interfaces/Drawable.h
         src/interfaces/Text.h
+        src/interfaces/Repositionable.h
+        src/interfaces/Resizable.h
 )
 

@@ -6,7 +6,7 @@
 #include "config/Consts.h"
 
 void TextBlock::Draw() {
-    DrawTextBox(font, text.c_str(), {x, y, widthPercentage * SCREEN_WIDTH, heightPercentage * SCREEN_HEIGHT}, fontSize,
+    DrawTextBox(font, text.c_str(), {x, y, width * SCREEN_WIDTH, height * SCREEN_HEIGHT}, fontSize,
                 spacing, wordWrap, tint);
 }
 
@@ -142,4 +142,38 @@ void TextBlock::DrawTextBox(const Font& font, const char* text, const Rectangle 
             textOffsetX += glyphWidth;  // avoid leading spaces
         }
     }
+}
+
+void TextBlock::setX(const float x) {
+    this->x = x;
+}
+
+void TextBlock::setY(const float y) {
+    this->y = y;
+}
+
+void TextBlock::setXY(const float x, const float y) {
+    setX(x);
+    setY(y);
+}
+
+void TextBlock::setWidth(const float width) {
+    this->width = width;
+}
+
+void TextBlock::setHeight(const float height) {
+    this->height = height;
+}
+
+void TextBlock::scaleX(const float multiplier) {
+    x *= multiplier;
+}
+
+void TextBlock::scaleY(const float multiplier) {
+    y *= multiplier;
+}
+
+void TextBlock::scaleXY(const float multiplier) {
+    scaleX(multiplier);
+    scaleY(multiplier);
 }
