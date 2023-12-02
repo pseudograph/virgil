@@ -2,6 +2,7 @@
 // Created by signal on 12/2/23.
 //
 #pragma once
+
 #include <memory>
 #include <string>
 #include <utility>
@@ -23,4 +24,5 @@ public:
     void scaleChildrenWidth(float multiplier) override;
     void scaleChildrenHeight(float multiplier) override;
     void scaleChildrenBoth(float multiplier) override;
+    void accept(Visitor& visitor) override;
 };

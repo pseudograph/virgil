@@ -18,3 +18,18 @@ void Screen::setChildrenWidth(float width) {
         }
     }
 }
+
+void Screen::setChildrenHeight(float height) {
+}
+
+void Screen::scaleChildrenWidth(float multiplier) {
+}
+
+void Screen::scaleChildrenHeight(float multiplier) {
+}
+
+void Screen::scaleChildrenBoth(float multiplier) {
+}
+
+void Screen::accept(Visitor& visitor) {
+}
