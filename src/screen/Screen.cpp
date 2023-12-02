@@ -8,7 +8,6 @@
 void Screen::draw() const {
     for (const auto& layer : layers) {
         for (const auto& element : layer) {
-            element.draw();
         }
     }
 }
@@ -16,7 +15,6 @@ void Screen::draw() const {
 void Screen::setChildrenWidth(float width) {
     for (const auto& layer : layers) {
         for (const auto& element : layer) {
-            element.
         }
     }
 }

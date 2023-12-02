@@ -4,7 +4,8 @@
 #pragma once
 
 
+#include "viewport/Viewport.h"
+
 class Virgil {
 private:
-    Viewport viewport;
 };

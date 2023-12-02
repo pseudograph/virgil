@@ -5,12 +5,12 @@
 #include "entities/visitors/Visitor.h"
 
 
-class ScalingVisitor final : public Visitor {
+class ScalingXYVisitor final : public Visitor {
 private:
     float scaleXBy{1.0};
     float scaleYBy{1.0};
 public:
-    explicit ScalingVisitor(const float resizeXBy, const float resizeYBy) : scaleXBy{resizeXBy}, scaleYBy{resizeYBy}
+    ScalingXYVisitor(const float scaleXBy, const float scaleYBy) : scaleXBy{scaleXBy}, scaleYBy{scaleYBy}
     {}
     void visit(TextBlock& textBlock) override;
 };

@@ -10,7 +10,9 @@
 #include "interfaces/Repositionable.h"
 #include "interfaces/Resizable.h"
 #include "interfaces/Text.h"
+#include "entities/visitors/Visitor.h"
 
+class Visitor;
 
 class TextBlock final : public Drawable, public Text, public Repositionable, public Resizable {
 private:
@@ -52,4 +54,5 @@ public:
     void scaleWidth(float multiplier) override;
     void scaleHeight(float multiplier) override;
     void scaleBoth(float multiplier) override;
+    void accept(Visitor& visitor);
 };

@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.27)
+cmake_minimum_required(VERSION 3.26)
 project(virgil)
 
 set(CMAKE_CXX_STANDARD 23)
@@ -41,8 +41,10 @@ add_executable(virgil src/main.cpp
         src/entities/visitors/drawingVisitor/DrawingVisitor.cpp
         src/entities/visitors/drawingVisitor/DrawingVisitor.h
         src/entities/visitors/Visitor.h
-        src/entities/visitors/resizingVisitor/ScalingVisitor.cpp
-        src/entities/visitors/resizingVisitor/ScalingVisitor.h
+        src/entities/visitors/scalingXYVisitor/ScalingXYVisitor.cpp
+        src/entities/visitors/scalingXYVisitor/ScalingXYVisitor.h
+        src/entities/visitors/scalingWHVisitor/ScalingWHVisitor.cpp
+        src/entities/visitors/scalingWHVisitor/ScalingWHVisitor.h
 )
 
 target_link_libraries(virgil raylib)
