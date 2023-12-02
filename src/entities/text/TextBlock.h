@@ -7,15 +7,15 @@
 #include <utility>
 #include <raylib.h>
 #include "interfaces/Drawable.h"
+#include "interfaces/Entity.h"
 #include "interfaces/Repositionable.h"
 #include "interfaces/Resizable.h"
 #include "interfaces/Text.h"
-#include "entities/visitors/Visitor.h"
 
 
 class Visitor;
 
-class TextBlock : public Drawable, public Text, public Repositionable, public Resizable {
+class TextBlock final : public Entity, public Drawable, public Text, public Repositionable, public Resizable {
 private:
     float x{};
     float y{};
@@ -55,5 +55,4 @@ public:
     void scaleWidth(float multiplier) override;
     void scaleHeight(float multiplier) override;
     void scaleBoth(float multiplier) override;
-    void accept(Visitor& visitor) override;
 };

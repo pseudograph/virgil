@@ -190,7 +190,3 @@ void TextBlock::scaleBoth(const float multiplier) {
     scaleWidth(multiplier);
     scaleHeight(multiplier);
 }
-
-void TextBlock::accept(Visitor& visitor) {
-    visitor.visit(*this);
-}

@@ -9,12 +9,13 @@
 #include <vector>
 #include "interfaces/CanResize.h"
 #include "interfaces/Drawable.h"
+#include "interfaces/Entity.h"
 
 
 class Screen final : public Drawable, public CanResize {
 private:
     std::string label;
-    std::vector<std::vector<std::unique_ptr<Drawable>>> layers;
+    std::vector<std::vector<std::unique_ptr<Entity>>> layers;
 public:
     explicit Screen(std::string label) : label{std::move(label)}
     {}
@@ -24,5 +25,4 @@ public:
     void scaleChildrenWidth(float multiplier) override;
     void scaleChildrenHeight(float multiplier) override;
     void scaleChildrenBoth(float multiplier) override;
-    void accept(Visitor& visitor) override;
 };

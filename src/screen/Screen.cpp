@@ -30,6 +30,3 @@ void Screen::scaleChildrenHeight(float multiplier) {
 
 void Screen::scaleChildrenBoth(float multiplier) {
 }
-
-void Screen::accept(Visitor& visitor) {
-}

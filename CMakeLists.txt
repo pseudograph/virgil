@@ -38,13 +38,8 @@ add_executable(virgil src/main.cpp
         src/screen/Screen.cpp
         src/screen/Screen.h
         src/interfaces/CanResize.h
-        src/entities/visitors/drawingVisitor/DrawingVisitor.cpp
-        src/entities/visitors/drawingVisitor/DrawingVisitor.h
+        src/interfaces/Entity.h
         src/entities/visitors/Visitor.h
-        src/entities/visitors/scalingXYVisitor/ScalingXYVisitor.cpp
-        src/entities/visitors/scalingXYVisitor/ScalingXYVisitor.h
-        src/entities/visitors/scalingWHVisitor/ScalingWHVisitor.cpp
-        src/entities/visitors/scalingWHVisitor/ScalingWHVisitor.h
 )
 
 target_link_libraries(virgil raylib)
