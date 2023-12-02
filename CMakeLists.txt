@@ -40,6 +40,8 @@ add_executable(virgil src/main.cpp
         src/interfaces/CanResize.h
         src/interfaces/Entity.h
         src/entities/visitors/Visitor.h
+        src/entities/visitors/drawVisitor/DrawVisitor.cpp
+        src/entities/visitors/drawVisitor/DrawVisitor.h
 )
 
 target_link_libraries(virgil raylib)

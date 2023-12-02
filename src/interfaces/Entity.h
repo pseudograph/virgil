@@ -3,6 +3,10 @@
 //
 #pragma once
 
-class Entity {
 
+class Visitor;
+
+class Entity {
+public:
+    virtual void accept(Visitor& visitor) = 0;
 };

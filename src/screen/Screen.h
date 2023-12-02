@@ -10,6 +10,7 @@
 #include "interfaces/CanResize.h"
 #include "interfaces/Drawable.h"
 #include "interfaces/Entity.h"
+#include "entities/visitors/drawVisitor/DrawVisitor.h"
 
 
 class Screen final : public Drawable, public CanResize {

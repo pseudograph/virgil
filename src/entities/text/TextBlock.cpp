@@ -4,6 +4,7 @@
 
 #include "TextBlock.h"
 #include "config/Consts.h"
+#include "entities/visitors/Visitor.h"
 
 void TextBlock::draw() const {
     DrawTextBox(font, text.c_str(), {x, y, width * SCREEN_WIDTH, height * SCREEN_HEIGHT}, fontSize,
@@ -189,4 +190,8 @@ void TextBlock::scaleHeight(const float multiplier) {
 void TextBlock::scaleBoth(const float multiplier) {
     scaleWidth(multiplier);
     scaleHeight(multiplier);
+}
+
+void TextBlock::accept(Visitor& visitor) {
+    visitor.visit(*this);
 }

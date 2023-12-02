@@ -55,4 +55,5 @@ public:
     void scaleWidth(float multiplier) override;
     void scaleHeight(float multiplier) override;
     void scaleBoth(float multiplier) override;
+    void accept(Visitor& visitor);
 };

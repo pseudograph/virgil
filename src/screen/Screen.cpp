@@ -6,8 +6,10 @@
 
 
 void Screen::draw() const {
+    DrawVisitor visitor;
     for (const auto& layer : layers) {
-        for (const auto& element : layer) {
+        for (const auto& entity : layer) {
+            entity->accept(visitor);
         }
     }
 }

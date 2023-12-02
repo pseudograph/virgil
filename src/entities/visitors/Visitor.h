@@ -6,6 +6,7 @@
 #include "entities/text/TextBlock.h"
 
 class Visitor {
+public:
     virtual ~Visitor() = default;
     virtual void visit(TextBlock& textblock) = 0;
 };
