@@ -9,7 +9,7 @@ public:
     virtual ~Resizable() = default;
     virtual void setWidth(float width) = 0;
     virtual void setHeight(float height) = 0;
-    virtual void scaleX(float multiplier) = 0;
-    virtual void scaleY(float multiplier) = 0;
-    virtual void scaleXY(float multiplier) = 0;
+    virtual void scaleWidth(float multiplier) = 0;
+    virtual void scaleHeight(float multiplier) = 0;
+    virtual void scaleBoth(float multiplier) = 0;
 };

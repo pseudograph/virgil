@@ -5,20 +5,20 @@
 #include "TextBlock.h"
 #include "config/Consts.h"
 
-void TextBlock::Draw() {
+void TextBlock::draw() const {
     DrawTextBox(font, text.c_str(), {x, y, width * SCREEN_WIDTH, height * SCREEN_HEIGHT}, fontSize,
                 spacing, wordWrap, tint);
 }
 
-void TextBlock::SetText(const std::string& text) {
+void TextBlock::setText(const std::string& text) {
     this->text = text;
 }
 
-std::string TextBlock::GetText() {
+std::string TextBlock::getText() const {
     return text;
 }
 
-void TextBlock::SetWordWrap(const bool wordWrap) {
+void TextBlock::setWordWrap(const bool wordWrap) {
     this->wordWrap = wordWrap;
 }
 
@@ -34,7 +34,7 @@ void TextBlock::SetWordWrap(const bool wordWrap) {
  * \param tint Color to tint text
  */
 void TextBlock::DrawTextBox(const Font& font, const char* text, const Rectangle rec, const float fontSize,
-                                        const float spacing, const bool wordWrap, const Color tint) {
+                                        const float spacing, const bool wordWrap, const Color tint) const {
     const unsigned int length{TextLength(text)};  // Total length in bytes of the text, scanned by codepoints in loop
     float textOffsetY = 0;          // Offset between lines (on line break '\n')
     float textOffsetX = 0.0f;       // Offset X to next character to draw
@@ -157,14 +157,6 @@ void TextBlock::setXY(const float x, const float y) {
     setY(y);
 }
 
-void TextBlock::setWidth(const float width) {
-    this->width = width;
-}
-
-void TextBlock::setHeight(const float height) {
-    this->height = height;
-}
-
 void TextBlock::scaleX(const float multiplier) {
     x *= multiplier;
 }
@@ -176,4 +168,25 @@ void TextBlock::scaleY(const float multiplier) {
 void TextBlock::scaleXY(const float multiplier) {
     scaleX(multiplier);
     scaleY(multiplier);
+}
+
+void TextBlock::setWidth(const float width) {
+    this->width = width;
+}
+
+void TextBlock::setHeight(const float height) {
+    this->height = height;
+}
+
+void TextBlock::scaleWidth(const float multiplier) {
+    width *= multiplier;
+}
+
+void TextBlock::scaleHeight(const float multiplier) {
+    height *= multiplier;
+}
+
+void TextBlock::scaleBoth(const float multiplier) {
+    scaleWidth(multiplier);
+    scaleHeight(multiplier);
 }

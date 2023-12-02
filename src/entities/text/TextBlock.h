@@ -32,21 +32,24 @@ public:
               font{font}, tint{tint}, fontSize{fontSize}, spacing{spacing}, wordWrap{wordWrap}
     {}
     // Drawable
-    void Draw() override;
+    void draw() const override;
     // Text
-    void SetText(const std::string& text) override;
-    std::string GetText() override;
-    void SetWordWrap(bool wordWrap) override;
+    void setText(const std::string& text) override;
+    [[nodiscard]] std::string getText() const override;
+    void setWordWrap(bool wordWrap) override;
     void DrawTextBox(const Font& font, const char *text, Rectangle rec, float fontSize, float spacing,
-        bool wordWrap, Color tint);
+        bool wordWrap, Color tint) const;
     // Repositionable
     void setX(float x) override;
     void setY(float y) override;
     void setXY(float x, float y) override;
-    // Resizable
-    void setWidth(float width) override;
-    void setHeight(float height) override;
     void scaleX(float multiplier) override;
     void scaleY(float multiplier) override;
     void scaleXY(float multiplier) override;
+    // Resizable
+    void setWidth(float width) override;
+    void setHeight(float height) override;
+    void scaleWidth(float multiplier) override;
+    void scaleHeight(float multiplier) override;
+    void scaleBoth(float multiplier) override;
 };

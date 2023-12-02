@@ -10,5 +10,7 @@ public:
     virtual void setX(float x) = 0;
     virtual void setY(float y) = 0;
     virtual void setXY(float x, float y) = 0;
+    virtual void scaleX(float multiplier) = 0;
+    virtual void scaleY(float multiplier) = 0;
+    virtual void scaleXY(float multiplier) = 0;
 };
-#endif //RESIZABLE_H

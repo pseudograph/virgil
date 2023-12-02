@@ -8,7 +8,7 @@
 class Text {
 public:
     virtual ~Text() = default;
-    virtual void SetText(const std::string& text) = 0;
-    virtual std::string GetText() = 0;
-    virtual void SetWordWrap(bool wordWrap) = 0;
+    virtual void setText(const std::string& text) = 0;
+    [[nodiscard]] virtual std::string getText() const = 0;
+    virtual void setWordWrap(bool wordWrap) = 0;
 };
