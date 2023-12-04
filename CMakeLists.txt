@@ -44,6 +44,11 @@ add_executable(virgil src/main.cpp
         src/entities/visitors/drawVisitor/DrawVisitor.h
         src/entities/visitors/scaleXYVisitor/ScaleXYVisitor.cpp
         src/entities/visitors/scaleXYVisitor/ScaleXYVisitor.h
+        src/entities/visitors/scaleWHVisitor/ScaleWHVisitor.cpp
+        src/entities/visitors/scaleWHVisitor/ScaleWHVisitor.h
+        src/entities/background/Background.cpp
+        src/entities/background/Background.h
+        src/interfaces/ImageTexture.h
 )
 
 target_link_libraries(virgil raylib)

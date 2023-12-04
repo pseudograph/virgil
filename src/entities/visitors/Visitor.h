@@ -3,10 +3,12 @@
 //
 #pragma once
 
+#include "entities/background/Background.h"
 #include "entities/text/TextBlock.h"
 
 class Visitor {
 public:
     virtual ~Visitor() = default;
     virtual void visit(TextBlock& textblock) = 0;
+    virtual void visit(Background& background) = 0;
 };

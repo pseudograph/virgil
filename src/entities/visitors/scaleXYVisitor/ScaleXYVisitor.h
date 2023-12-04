@@ -13,4 +13,5 @@ public:
     ScaleXYVisitor(const float scaleXBy, const float scaleYBy) : scaleXBy{scaleXBy}, scaleYBy{scaleYBy}
     {}
     void visit(TextBlock& textblock) override;
+    void visit(Background& background) override;
 };

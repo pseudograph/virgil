@@ -8,5 +8,6 @@ class Visitor;
 
 class Entity {
 public:
+    virtual ~Entity() = default;
     virtual void accept(Visitor& visitor) = 0;
 };

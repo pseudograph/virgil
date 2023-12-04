@@ -6,5 +6,7 @@
 
 
 class DrawVisitor final : public Visitor {
+public:
     void visit(TextBlock& textblock) override;
+    void visit(Background& background) override;
 };

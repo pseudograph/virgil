@@ -4,6 +4,8 @@
 
 #include "Screen.h"
 
+#include "entities/visitors/drawVisitor/DrawVisitor.h"
+
 
 void Screen::draw() const {
     DrawVisitor visitor;

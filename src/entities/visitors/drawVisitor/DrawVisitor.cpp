@@ -7,3 +7,7 @@
 void DrawVisitor::visit(TextBlock& textblock) {
     textblock.draw();
 }
+
+void DrawVisitor::visit(Background& background) {
+    background.draw();
+}
