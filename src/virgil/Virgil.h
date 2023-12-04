@@ -5,7 +5,12 @@
 
 
 #include "viewport/Viewport.h"
+#include "config/Consts.h"
 
 class Virgil {
-private:
+public:
+    Viewport viewport;
+    Virgil() : viewport{SCREEN_WIDTH, SCREEN_HEIGHT, FPS, TITLE}
+    {}
+    void run() const;
 };

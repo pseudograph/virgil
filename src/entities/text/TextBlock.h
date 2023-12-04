@@ -28,10 +28,10 @@ private:
     float spacing;
     bool wordWrap{};
 public:
-    TextBlock(const float width, const float height, std::string text, const Font& font,
+    TextBlock(const float x, const float y, const float width, const float height, std::string text, const Font& font,
               const Color tint, const float fontSize, const float spacing, const bool wordWrap)
               :
-              width{width}, height{height}, text{std::move(text)},
+              x{x}, y{y}, width{width}, height{height}, text{std::move(text)},
               font{font}, tint{tint}, fontSize{fontSize}, spacing{spacing}, wordWrap{wordWrap}
     {}
     // Drawable
@@ -46,14 +46,10 @@ public:
     void setX(float x) override;
     void setY(float y) override;
     void setXY(float x, float y) override;
-    void scaleX(float multiplier) override;
-    void scaleY(float multiplier) override;
-    void scaleXY(float multiplier) override;
+    void scaleXY(float xMultiplier, float yMultiplier) override;
     // Resizable
     void setWidth(float width) override;
     void setHeight(float height) override;
-    void scaleWidth(float multiplier) override;
-    void scaleHeight(float multiplier) override;
-    void scaleBoth(float multiplier) override;
+    void scaleWH(float widthMultiplier, float heightMultiplier) override;
     void accept(Visitor& visitor) override;
 };

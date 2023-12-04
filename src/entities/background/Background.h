@@ -20,10 +20,12 @@ private:
     float height;
     Image image{};
     Texture2D texture{};
+    Color tint;
 public:
-    explicit Background(const std::string& fileName, const float x, const float y, const float width, const float height)
+    explicit Background(const std::string& fileName, const float x, const float y, const float width, const float height,
+                        const Color tint)
     :
-    x{x}, y{y}, width{width}, height{height}
+    x{x}, y{y}, width{width}, height{height}, tint{tint}
     {
         image = LoadImage(fileName.c_str());
         texture = LoadTextureFromImage(image);
@@ -34,13 +36,9 @@ public:
     void setX(float x) override;
     void setY(float y) override;
     void setXY(float x, float y) override;
-    void scaleX(float multiplier) override;
-    void scaleY(float multiplier) override;
-    void scaleXY(float multiplier) override;
+    void scaleXY(float xMultiplier, float yMultiplier) override;
     void setWidth(float width) override;
     void setHeight(float height) override;
-    void scaleWidth(float multiplier) override;
-    void scaleHeight(float multiplier) override;
-    void scaleBoth(float multiplier) override;
+    void scaleWH(float widthMultiplier, float heightMultiplier) override;
     void accept(Visitor& visitor) override;
 };

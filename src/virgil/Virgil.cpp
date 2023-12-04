@@ -3,3 +3,7 @@
 //
 
 #include "Virgil.h"
+
+void Virgil::run() const {
+    viewport.run();
+}

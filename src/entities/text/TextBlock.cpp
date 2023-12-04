@@ -7,8 +7,7 @@
 #include "entities/visitors/Visitor.h"
 
 void TextBlock::draw() const {
-    DrawTextBox(font, text.c_str(), {x, y, width * SCREEN_WIDTH, height * SCREEN_HEIGHT}, fontSize,
-                spacing, wordWrap, tint);
+    DrawTextBox(font, text.c_str(), Rectangle{x, y, width, height}, fontSize, spacing, wordWrap, tint);
 }
 
 void TextBlock::setText(const std::string& text) {
@@ -158,17 +157,9 @@ void TextBlock::setXY(const float x, const float y) {
     setY(y);
 }
 
-void TextBlock::scaleX(const float multiplier) {
-    x *= multiplier;
-}
-
-void TextBlock::scaleY(const float multiplier) {
-    y *= multiplier;
-}
-
-void TextBlock::scaleXY(const float multiplier) {
-    scaleX(multiplier);
-    scaleY(multiplier);
+void TextBlock::scaleXY(const float xMultiplier, const float yMultiplier) {
+    x *= xMultiplier;
+    y *= yMultiplier;
 }
 
 void TextBlock::setWidth(const float width) {
@@ -179,17 +170,9 @@ void TextBlock::setHeight(const float height) {
     this->height = height;
 }
 
-void TextBlock::scaleWidth(const float multiplier) {
-    width *= multiplier;
-}
-
-void TextBlock::scaleHeight(const float multiplier) {
-    height *= multiplier;
-}
-
-void TextBlock::scaleBoth(const float multiplier) {
-    scaleWidth(multiplier);
-    scaleHeight(multiplier);
+void TextBlock::scaleWH(const float widthMultiplier, const float heightMultiplier) {
+    width *= widthMultiplier;
+    height *= heightMultiplier;
 }
 
 void TextBlock::accept(Visitor& visitor) {

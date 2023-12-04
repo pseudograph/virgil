@@ -51,5 +51,5 @@ add_executable(virgil src/main.cpp
         src/interfaces/ImageTexture.h
 )
 
-target_link_libraries(virgil raylib)
+target_link_libraries(virgil raylib fmt)
 

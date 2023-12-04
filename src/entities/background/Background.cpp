@@ -4,9 +4,12 @@
 
 #include "Background.h"
 
+#include <iostream>
+
 #include "entities/visitors/Visitor.h"
 
 void Background::draw() const {
+    DrawTexture(texture, x, y, WHITE);
 }
 
 void Background::loadImage(const std::string& fileName) {
@@ -30,17 +33,9 @@ void Background::setXY(const float x, const float y) {
     setY(y);
 }
 
-void Background::scaleX(const float multiplier) {
-    x *= multiplier;
-}
-
-void Background::scaleY(const float multiplier) {
-    y *= multiplier;
-}
-
-void Background::scaleXY(const float multiplier) {
-    scaleX(multiplier);
-    scaleY(multiplier);
+void Background::scaleXY(const float xMultiplier, const float yMultiplier) {
+    x *= xMultiplier;
+    y *= yMultiplier;
 }
 
 void Background::setWidth(const float width) {
@@ -51,17 +46,9 @@ void Background::setHeight(const float height) {
     this->height = height;
 }
 
-void Background::scaleWidth(const float multiplier) {
-    width *= multiplier;
-}
-
-void Background::scaleHeight(const float multiplier) {
-    height *= multiplier;
-}
-
-void Background::scaleBoth(const float multiplier) {
-    scaleWidth(multiplier);
-    scaleHeight(multiplier);
+void Background::scaleWH(const float widthMultiplier, const float heightMultiplier) {
+    width *= widthMultiplier;
+    height *= heightMultiplier;
 }
 
 void Background::accept(Visitor& visitor) {
