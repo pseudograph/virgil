@@ -30,16 +30,16 @@ void Viewport::run() const {
 }
 
 void Viewport::setWidth(const int width) {
-    this->width = width;
+    dest.width = static_cast<float>(width);
 }
 
 void Viewport::setHeight(const int height) {
-    this->height = height;
+    dest.height = static_cast<float>(height);
 }
 
-void Viewport::scaleWH(const int widthMultiplier, const int heightMultiplier) {
-    width *= widthMultiplier;
-    height *= heightMultiplier;
+void Viewport::scaleWH(const float widthMultiplier, const float heightMultiplier) {
+    dest.width *= widthMultiplier;
+    dest.height *= heightMultiplier;
 }
 
 void Viewport::insertScreen(const Screen& screen) {
