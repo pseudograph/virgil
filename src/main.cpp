@@ -7,7 +7,7 @@ int main() {
     std::cout << "Hello, World!" << std::endl;
     Virgil virgil;
     Screen screen{"image"};
-    const std::shared_ptr<Entity> background = std::make_shared<Background>("bg.png", 0.0, 0.0, 1.0, 1.0, WHITE);
+    const std::shared_ptr<Entity> background = std::make_shared<Background>("19201080bg.png", 0.0, 0.0, 0.5, 1.0, WHITE);
     screen.setLayerCount(1);
     screen.insertEntity(0, background);
     virgil.viewport.insertScreen(screen);

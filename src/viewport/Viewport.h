@@ -11,6 +11,7 @@
 
 class Viewport {
 private:
+    Rectangle src;
     int width;
     int height;
     int fps;
