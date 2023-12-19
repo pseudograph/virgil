@@ -6,6 +6,7 @@
 #include <string>
 #include <utility>
 #include <raylib.h>
+#include <fmt/core.h>
 
 #include "config/Consts.h"
 #include "screen/Screen.h"
@@ -26,7 +27,7 @@ private:
 
 public:
     Viewport(const int width, const int height, const int fps, std::string title, const size_t activeScreen = 0) :
-             src{BASE_WIDTH, BASE_HEIGHT}, dest{static_cast<float>(width), static_cast<float>(height)},
+             src{0, 0, BASE_WIDTH, BASE_HEIGHT}, dest{0, 0, static_cast<float>(width), static_cast<float>(height)},
              fps{fps}, title{std::move(title)}, activeScreen{activeScreen} {
         Init();
     }
