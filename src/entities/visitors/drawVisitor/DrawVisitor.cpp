@@ -11,3 +11,7 @@ void DrawVisitor::visit(TextBlock& textblock) {
 void DrawVisitor::visit(Background& background) {
     background.draw();
 }
+
+void DrawVisitor::visit(Sprite& sprite) {
+    sprite.draw();
+}

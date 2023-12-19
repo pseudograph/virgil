@@ -49,6 +49,9 @@ add_executable(virgil src/main.cpp
         src/entities/background/Background.cpp
         src/entities/background/Background.h
         src/interfaces/ImageTexture.h
+        src/entities/sprite/Sprite.cpp
+        src/entities/sprite/Sprite.h
+        src/interfaces/Rotatable.h
 )
 
 target_link_libraries(virgil raylib fmt)

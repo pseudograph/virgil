@@ -8,11 +8,11 @@
 #include <iostream>
 
 
+
 void Viewport::run() {
     while (!WindowShouldClose()) {
         if (IsWindowResized()) {
-            setWidth(GetScreenWidth());
-            setHeight(GetScreenHeight());
+            resizeMaintainingAspectRatio(GetScreenWidth(), GetScreenHeight());
         }
         if (screens.empty()) {
             fmt::println(stderr, "ERROR: [Viewport:run]: No screens defined.");
@@ -24,8 +24,22 @@ void Viewport::run() {
             }
         EndTextureMode();
         BeginDrawing();
-            DrawTexturePro(target.texture, src, dest, {0, 0}, 0, RAYWHITE);
+            DrawTexturePro(target.texture, src, dest, origin, 0, RAYWHITE);
         EndDrawing();
+    }
+}
+
+void Viewport::resizeMaintainingAspectRatio(const int width, const int height) {
+    if (height < width) {
+        setHeight(height);
+        setWidth(static_cast<int>(static_cast<float>(height) * (static_cast<float>(SCREEN_WIDTH) / static_cast<float>(SCREEN_HEIGHT))));
+        origin.y = 0;
+        origin.x = -1 * (static_cast<float>(width) - dest.width) / 2;
+    } else {
+        setWidth(width);
+        setHeight(static_cast<int>(static_cast<float>(width) * (static_cast<float>(SCREEN_HEIGHT) / static_cast<float>(SCREEN_WIDTH))));
+        origin.x = 0;
+        origin.y = -1 * (static_cast<float>(height) - dest.height) / 2;
     }
 }
 

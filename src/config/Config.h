@@ -6,11 +6,15 @@
 
 #define BASE_WIDTH 1920
 #define BASE_HEIGHT 1080
-#define SCREEN_WIDTH 1280
-#define SCREEN_HEIGHT 720
+#define SCREEN_WIDTH 640
+#define SCREEN_HEIGHT 480
 #define FPS 60
 #define TITLE "VIRGIL"
 
+/**
+ * \brief Screen definitions
+ */
+#define MAX_LAYERS 5
 enum LAYER {
     BACKGROUND,
     SPRITES,
@@ -18,3 +22,10 @@ enum LAYER {
     GUI,
     TEXT
 };
+
+/**
+ * \brief Sprite definitions
+ */
+#define LEFT (0 - BASE_WIDTH / 3)
+#define CENTRE 0
+#define RIGHT (0 + BASE_WIDTH / 3)

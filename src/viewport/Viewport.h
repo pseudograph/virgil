@@ -17,6 +17,7 @@ private:
     Rectangle src;
     Rectangle dest;
     RenderTexture2D target{};
+    Vector2 origin{};
     int fps;
     std::string title;
     std::vector<Screen> screens;
@@ -32,12 +33,12 @@ public:
              // src{0, HEIGHT, WIDTH, -HEIGHT} to account for OpenGL coordinate discrepancy (origin at bottom-left)
              src{0, BASE_HEIGHT, BASE_WIDTH, -1 * BASE_HEIGHT},
              dest{0, 0, static_cast<float>(width), static_cast<float>(height)},
-             fps{fps}, title{std::move(title)}, activeScreen{activeScreen} {
+             origin{0, 0}, fps{fps}, title{std::move(title)}, activeScreen{activeScreen} {
         Init();
     }
 
-
     void run();
+    void resizeMaintainingAspectRatio(int width, int height);
     void setWidth(int width);
     void setHeight(int height);
     void scaleWH(float widthMultiplier, float heightMultiplier);

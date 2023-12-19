@@ -17,8 +17,7 @@ private:
     Color tint;
 public:
     explicit Background(const std::string& fileName, const Color tint)
-    : tint{tint}
-    {
+    : tint{tint} {
         image = LoadImage(fileName.c_str());
         texture = LoadTextureFromImage(image);
     }
