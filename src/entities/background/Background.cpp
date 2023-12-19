@@ -9,7 +9,7 @@
 #include "entities/visitors/Visitor.h"
 
 void Background::draw() const {
-    DrawTexture(texture, x, y, WHITE);
+    DrawTexture(texture, 0, 0, WHITE);
 }
 
 void Background::loadImage(const std::string& fileName) {
@@ -18,37 +18,6 @@ void Background::loadImage(const std::string& fileName) {
 
 void Background::updateTexture() {
     texture = LoadTextureFromImage(image);
-}
-
-void Background::setX(const float x) {
-    this->x = x;
-}
-
-void Background::setY(const float y) {
-    this->y = y;
-}
-
-void Background::setXY(const float x, const float y) {
-    setX(x);
-    setY(y);
-}
-
-void Background::scaleXY(const float xMultiplier, const float yMultiplier) {
-    x *= xMultiplier;
-    y *= yMultiplier;
-}
-
-void Background::setWidth(const float width) {
-    this->width = width;
-}
-
-void Background::setHeight(const float height) {
-    this->height = height;
-}
-
-void Background::scaleWH(const float widthMultiplier, const float heightMultiplier) {
-    width *= widthMultiplier;
-    height *= heightMultiplier;
 }
 
 void Background::accept(Visitor& visitor) {

@@ -4,6 +4,6 @@
 
 #include "Virgil.h"
 
-void Virgil::run() const {
+void Virgil::run(){
     viewport.run();
 }

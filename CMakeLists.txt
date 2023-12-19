@@ -26,7 +26,7 @@ endif()
 add_executable(virgil src/main.cpp
         src/entities/text/TextBlock.cpp
         src/entities/text/TextBlock.h
-        src/config/Consts.h
+        src/config/Config.h
         src/interfaces/Drawable.h
         src/interfaces/Text.h
         src/interfaces/Repositionable.h

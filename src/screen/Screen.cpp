@@ -38,7 +38,7 @@ void Screen::visitAllInLayer(Visitor& visitor, const size_t layer) const {
 }
 
 void Screen::setLayerCount(const size_t layerCount) {
-    while (layers.size() < layerCount) {
+    for (size_t layersSize{layers.size()}; layersSize < layerCount; ++layersSize) {
         layers.emplace_back();
     }
 }

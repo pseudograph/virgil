@@ -3,7 +3,6 @@
 //
 
 #include "TextBlock.h"
-#include "config/Consts.h"
 #include "entities/visitors/Visitor.h"
 
 void TextBlock::draw() const {

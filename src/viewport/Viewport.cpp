@@ -4,18 +4,18 @@
 
 #include "Viewport.h"
 #include <fmt/format.h>
-#include "config/Consts.h"
 
 #include <iostream>
 
 
-void Viewport::run() const {
+void Viewport::run() {
     while (!WindowShouldClose()) {
-        Rectangle src{0, 0, 1920, 1080};
-        Rectangle dest{0, 0, SCREEN_WIDTH, SCREEN_HEIGHT};
-        const RenderTexture2D target = LoadRenderTexture(1920, 1080);
+        if (IsWindowResized()) {
+            setWidth(GetScreenWidth());
+            setHeight(GetScreenHeight());
+        }
         if (screens.empty()) {
-            fmt::println(stderr, "[Viewport:run]: No screens defined.");
+            fmt::println(stderr, "ERROR: [Viewport:run]: No screens defined.");
         }
         BeginTextureMode(target);
             ClearBackground(RAYWHITE);
@@ -24,7 +24,7 @@ void Viewport::run() const {
             }
         EndTextureMode();
         BeginDrawing();
-            DrawTexturePro(target.texture, src, dest, {0, 0}, 0.0, RAYWHITE);
+            DrawTexturePro(target.texture, src, dest, {0, 0}, 0, RAYWHITE);
         EndDrawing();
     }
 }

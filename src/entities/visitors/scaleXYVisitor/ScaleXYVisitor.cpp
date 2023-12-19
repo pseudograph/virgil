@@ -7,7 +7,3 @@
 void ScaleXYVisitor::visit(TextBlock& textblock) {
     textblock.scaleXY(scaleXBy, scaleYBy);
 }
-
-void ScaleXYVisitor::visit(Background& background) {
-    background.scaleXY(scaleXBy, scaleYBy);
-}

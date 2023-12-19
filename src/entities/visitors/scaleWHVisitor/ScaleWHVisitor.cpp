@@ -4,10 +4,12 @@
 
 #include "ScaleWHVisitor.h"
 
+#include <fmt/core.h>
+
 void ScaleWHVisitor::visit(TextBlock& textblock) {
     textblock.scaleWH(scaleWidthBy, scaleHeightBy);
 }
 
 void ScaleWHVisitor::visit(Background& background) {
-    background.scaleWH(scaleWidthBy, scaleHeightBy);
+    fmt::println(stderr, "WARNING: [ScaleWHVisitor::visit]: visiting Background, which is not implemented.");
 }
