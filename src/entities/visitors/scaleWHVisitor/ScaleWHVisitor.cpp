@@ -17,3 +17,7 @@ void ScaleWHVisitor::visit(Background& background) {
 void ScaleWHVisitor::visit(Sprite& sprite) {
     sprite.scaleWH(scaleWidthBy, scaleHeightBy);
 }
+
+void ScaleWHVisitor::visit(Button& button) {
+    button.scaleWH(scaleWidthBy, scaleHeightBy);
+}

@@ -52,6 +52,11 @@ add_executable(virgil src/main.cpp
         src/entities/sprite/Sprite.cpp
         src/entities/sprite/Sprite.h
         src/interfaces/Rotatable.h
+        src/interfaces/Savable.h
+        src/entities/button/Button.cpp
+        src/entities/button/Button.h
+        src/interfaces/Hoverable.h
+        src/interfaces/Clickable.h
 )
 
 target_link_libraries(virgil raylib fmt)

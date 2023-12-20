@@ -4,6 +4,7 @@
 #pragma once
 
 #include "entities/background/Background.h"
+#include "entities/button/Button.h"
 #include "entities/sprite/Sprite.h"
 #include "entities/text/TextBlock.h"
 
@@ -13,4 +14,5 @@ public:
     virtual void visit(TextBlock& textblock) = 0;
     virtual void visit(Background& background) = 0;
     virtual void visit(Sprite& sprite) = 0;
+    virtual void visit(Button& button) = 0;
 };

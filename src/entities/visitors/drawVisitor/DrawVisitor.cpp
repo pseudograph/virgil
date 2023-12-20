@@ -15,3 +15,7 @@ void DrawVisitor::visit(Background& background) {
 void DrawVisitor::visit(Sprite& sprite) {
     sprite.draw();
 }
+
+void DrawVisitor::visit(Button& button) {
+    button.draw();
+}

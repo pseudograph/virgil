@@ -9,7 +9,7 @@
 #include "entities/visitors/Visitor.h"
 
 void Background::draw() const {
-    DrawTexture(texture, 0, 0, WHITE);
+    DrawTexture(texture, 0, 0, tint);
 }
 
 void Background::loadImage(const std::string& fileName) {

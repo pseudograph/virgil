@@ -18,7 +18,6 @@
 enum LAYER {
     BACKGROUND,
     SPRITES,
-    UIBG,
     GUI,
     TEXT
 };
